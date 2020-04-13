@@ -1,0 +1,27 @@
+html,body{
+  padding:0;
+  margin:0;
+  height:100%;
+  width:100%;
+}
+
+.controls {
+  position:fixed;
+  top:0;
+  left:0;
+}
+
+.colorOption {
+  display:inline-block;
+  height:60px;
+  width:60px;
+  padding:4px;
+  margin:4px;
+  border-radius:2px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, .4);
+  cursor:pointer;
+}
+
+input[type=radio] {
+  display:none;
+}
