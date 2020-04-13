@@ -6,20 +6,52 @@ import { environments } from './environment/index.js';
 
 const colors = [
   {
-    name: "Burnt Orange",
-    val: "e97300"
+    name: 'Burnt Orange',
+    val: 'e97300'
   },
   {
-    name: "Mars Red",
-    val: "e1261c"
+    name: 'Mars Red',
+    val: 'e1261c'
   },
   {
-    name: "Rush Green",
-    val: "4c9d2f"
+    name: 'Rush Green',
+    val: '4c9d2f'
   },
   {
-    name: "Patriot Blue",
-    val: "004a88"
+    name: 'Patriot Blue',
+    val: '004a88'
+  },
+  {
+    name: 'Purple Lilac',
+    val: '7c6991'
+  },
+  {
+    name: 'Storm Gray',
+    val: 'b2b2b2'
+  },
+  {
+    name: 'Olympia White',
+    val: 'ffffff'
+  },
+  {
+    name: 'Stone Gray',
+    val: 'a7a089'
+  },
+  {
+    name: 'Slate Gray',
+    val: '63656a'
+  },
+  {
+    name: 'Jet Black',
+    val: '000000'
+  },
+  {
+    name: 'Mint Green',
+    val: '007953'
+  },
+  {
+    name: 'Evergreen',
+    val: '0a5640'
   },
 ];
 const populateColorOptions = (category) => {
@@ -105,8 +137,7 @@ addLights();
 const pmremGenerator = new THREE.PMREMGenerator( renderer );
 pmremGenerator.compileEquirectangularShader();
 
-const getCubeMapTexture = environment => {
-  const { path } = environment;
+const getCubeMapTexture = path => {
 
   // no envmap
   if ( ! path ) return Promise.resolve( { envMap: null } );
@@ -130,9 +161,9 @@ const getCubeMapTexture = environment => {
 
 const updateEnvironment = () => {
 
-  const environment = environments[1];
+  const url = 'js/environment/autoshop_01_1k.hdr';
 
-  getCubeMapTexture( environment ).then(( { envMap } ) => {
+  getCubeMapTexture( url ).then(( { envMap } ) => {
 
 //    if ((!envMap || !this.state.background) && this.activeCamera === this.defaultCamera) {
 //      this.scene.add(this.vignette);
