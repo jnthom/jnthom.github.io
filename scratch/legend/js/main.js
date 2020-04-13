@@ -50,7 +50,7 @@ const colors = [
     val: '007953'
   },
   {
-    name: 'Evergreen',
+    name: 'Ever Green',
     val: '0a5640'
   },
 ];
