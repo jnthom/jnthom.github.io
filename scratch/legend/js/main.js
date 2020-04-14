@@ -68,7 +68,7 @@ const populateColorOptions = (category) => {
     label.htmlFor = input.id;
     label.classList.add('colorOption');
     label.style.backgroundColor = '#' + colors[i].val;
-    label.innerText = colors[i].name;
+    label.title = colors[i].name;
     container.appendChild(label);
   }
 };
@@ -201,6 +201,9 @@ loader.load( 'models/half-cage.glb', function ( gltf ) {
   // set camera to rotate around center of object
   controls.update();
 
+  document.querySelector('#pc_color1').click();
+  document.querySelector('#sc_color8').click();
+
   window.camera = camera;
 
 }, undefined, function ( error ) {
@@ -232,3 +235,5 @@ for (const scOption of document.querySelectorAll('input[name=sc]')) {
     leftUpright.material.color.setHex(parseInt(scOption.value, 16));
   });
 }
+
+console.log(scene);
